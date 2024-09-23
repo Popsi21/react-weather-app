@@ -1,15 +1,22 @@
 .Weather {
-  border: 1px solid rgb(205, 200, 200);
+  border: 1px solid rgba(255, 255, 255, 0.77);
   border-radius: 8px;
   font-family: Arial, Helvetica, sans-serif;
   color: rgb(135, 135, 135);
   padding: 16px;
   margin: 30px auto;
+  background-color: rgb(254, 255, 254);
+  box-shadow: 0px 0px 15px 10px rgba(100, 153, 114, 0.889);
 }
 .Weather form {
   margin-bottom: 20px;
   border: rgb(205, 200, 200);
 }
+
+.Weather .form-control {
+  background-color: rgba(209, 221, 212, 0.09);
+}
+
 .Weather h1 {
   line-height: 29px;
   font-size: 24px;
@@ -28,7 +35,8 @@
 
 img {
   line-height: 64px;
-  margin-top: 0px;
+  position: relative;
+  top: -17px;
 }
 
 .Weather .unit {
@@ -44,6 +52,11 @@ img {
   color: rgb(33, 33, 33);
   font-size: 64px;
   line-height: 64px;
-  margin-left: 0px;
+
   font-weight: 400;
+}
+.Weather .btn {
+  background-color: rgba(93, 178, 111, 0.733);
+  width: 100px;
+  color: rgb(93, 93, 93);
 }
