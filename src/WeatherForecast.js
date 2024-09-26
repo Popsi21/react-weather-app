@@ -11,24 +11,25 @@ export default function WeatherForecast(props) {
     setForecast(response.data.daily);
     setLoaded(true);
   }
-  console.log(forecast);
 
   if (loaded) {
+    console.log(forecast);
+
     return (
       <div className="WeatherForecast">
         <div className="row">
           <div className="col">
-            <div className="WeatherForecast-day">Thu</div>
+            <div className="WeatherForecast-day">{forecast[0].dt}</div>
             <img
               alt="forecast_icon"
               src="https://openweathermap.org/img/wn/10d@2x.png"
             />
             <div className="WeatherForecast-temperature">
               <span className="WeatherForecast-temperature-max">
-                {forecast[0].temp.max}°
+                {Math.round(forecast[0].temp.max)}°
               </span>
               <span className="WeatherForecast-temperature-min">
-                {forecast[0].temp.min}°
+                {Math.round(forecast[0].temp.min)}°
               </span>
             </div>
           </div>
@@ -36,10 +37,10 @@ export default function WeatherForecast(props) {
       </div>
     );
   } else {
-    let apiKey = "535cacbb3f8a0df0aeb4790235b9541f";
+    let apiKey = "7059cb165caa3316bff682d263a01b1e";
     let longitude = props.coordinates.lon;
     let latitude = props.coordinates.lat;
-    let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&appid=${apiKey}`;
+    let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;
 
     axios.get(apiUrl).then(handleResponse);
     return null;
